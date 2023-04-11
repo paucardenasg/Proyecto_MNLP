@@ -1,2 +1,2 @@
 # Proyecto_MNLP
-Este repositorio contiene el primer proyecto de la materia Modelos No Lineales Para Pronósticos.
+Este repositorio contiene el proyecto final de la materia Modelos No Lineales Para Pronósticos.
