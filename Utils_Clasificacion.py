@@ -144,7 +144,7 @@ class TransformData:
     
 
 # Función para dividir el conjunto de datos en entrenamiento y prueba
-def split_data_clasification(data, labels, test_size, shuffle=True):
+def split_data_clasification(data, labels, test_size, shuffle=True, reshape=True):
     # Obteniendo la cantidad de datos de prueba
     n_test = int(data.shape[0] * test_size)
     # Mezclando los datos
@@ -159,8 +159,9 @@ def split_data_clasification(data, labels, test_size, shuffle=True):
     X_test = data[:n_test]
     y_test = labels[:n_test]
     # Agregando una dimensión a los datos de y
-    y_train = y_train.reshape(-1, 1)
-    y_test = y_test.reshape(-1, 1)
+    if reshape:
+        y_train = y_train.reshape(-1, 1)
+        y_test = y_test.reshape(-1, 1)
     # Imprimiendo las formas de los datos
     print('- Forma de los Datos de Entrenamiento:')
     print(f'\t- Forma de los datos de Entrenamiento: {X_train.shape}')
